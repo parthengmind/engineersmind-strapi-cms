@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_v1_code_blocks",
+  "info": {
+    "displayName": "codeBlock"
+  },
+  "options": {},
+  "attributes": {
+    "codeBlock": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

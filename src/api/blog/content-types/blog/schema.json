@@ -30,7 +30,11 @@
       "type": "dynamiczone",
       "components": [
         "v1.paragraph",
-        "v1.image"
+        "v1.image",
+        "v1.list",
+        "v1.main-heading-and-content",
+        "v1.content",
+        "v1.code-block"
       ]
     }
   }

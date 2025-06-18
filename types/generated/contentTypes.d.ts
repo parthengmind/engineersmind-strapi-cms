@@ -413,7 +413,16 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blogContent: Schema.Attribute.DynamicZone<['v1.paragraph', 'v1.image']>;
+    blogContent: Schema.Attribute.DynamicZone<
+      [
+        'v1.paragraph',
+        'v1.image',
+        'v1.list',
+        'v1.main-heading-and-content',
+        'v1.content',
+        'v1.code-block',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

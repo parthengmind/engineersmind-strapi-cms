@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_v1_contents",
+  "info": {
+    "displayName": "content"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "linkableContent": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

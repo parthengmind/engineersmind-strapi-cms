@@ -62,25 +62,81 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface V1AdvancedSection extends Struct.ComponentSchema {
+  collectionName: 'components_v1_advanced_sections';
+  info: {
+    displayName: 'Advanced Section';
+  };
+  attributes: {};
+}
+
+export interface V1CodeBlock extends Struct.ComponentSchema {
+  collectionName: 'components_v1_code_blocks';
+  info: {
+    displayName: 'codeBlock';
+  };
+  attributes: {
+    codeBlock: Schema.Attribute.Text;
+  };
+}
+
+export interface V1Content extends Struct.ComponentSchema {
+  collectionName: 'components_v1_contents';
+  info: {
+    displayName: 'content';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    linkableContent: Schema.Attribute.RichText;
+  };
+}
+
 export interface V1Image extends Struct.ComponentSchema {
   collectionName: 'components_v1_images';
   info: {
     displayName: 'image';
   };
   attributes: {
-    caption: Schema.Attribute.String;
+    alt: Schema.Attribute.String;
     src: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
+  };
+}
+
+export interface V1List extends Struct.ComponentSchema {
+  collectionName: 'components_v1_lists';
+  info: {
+    displayName: 'list';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    linkableContent: Schema.Attribute.RichText;
+    listType: Schema.Attribute.Enumeration<['logoList', 'bulletpoint']>;
+  };
+}
+
+export interface V1MainHeadingAndContent extends Struct.ComponentSchema {
+  collectionName: 'components_v1_main_heading_and_contents';
+  info: {
+    displayName: 'heading';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    headingType: Schema.Attribute.Enumeration<
+      ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+    >;
   };
 }
 
 export interface V1Paragraph extends Struct.ComponentSchema {
   collectionName: 'components_v1_paragraphs';
   info: {
-    displayName: 'paragraph';
+    displayName: 'simpleSection';
   };
   attributes: {
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
-    heading: Schema.Attribute.String;
+    content: Schema.Attribute.Component<'v1.content', false>;
+    heading: Schema.Attribute.Component<'v1.main-heading-and-content', false>;
+    image: Schema.Attribute.Component<'v1.image', false>;
   };
 }
 
@@ -92,7 +148,12 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'v1.advanced-section': V1AdvancedSection;
+      'v1.code-block': V1CodeBlock;
+      'v1.content': V1Content;
       'v1.image': V1Image;
+      'v1.list': V1List;
+      'v1.main-heading-and-content': V1MainHeadingAndContent;
       'v1.paragraph': V1Paragraph;
     }
   }

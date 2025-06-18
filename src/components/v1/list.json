@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_v1_lists",
+  "info": {
+    "displayName": "list"
+  },
+  "options": {},
+  "attributes": {
+    "listType": {
+      "type": "enumeration",
+      "enum": [
+        "logoList",
+        "bulletpoint"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "linkableContent": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

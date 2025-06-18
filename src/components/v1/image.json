@@ -14,7 +14,7 @@
         "files"
       ]
     },
-    "caption": {
+    "alt": {
       "type": "string"
     }
   },
