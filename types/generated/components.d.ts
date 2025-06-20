@@ -70,6 +70,16 @@ export interface V1AdvancedSection extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface V1BulletedList extends Struct.ComponentSchema {
+  collectionName: 'components_v1_bulleted_lists';
+  info: {
+    displayName: 'bulletedList';
+  };
+  attributes: {
+    listContent: Schema.Attribute.Component<'v1.content', true>;
+  };
+}
+
 export interface V1CodeBlock extends Struct.ComponentSchema {
   collectionName: 'components_v1_code_blocks';
   info: {
@@ -115,6 +125,40 @@ export interface V1List extends Struct.ComponentSchema {
   };
 }
 
+export interface V1ListContent extends Struct.ComponentSchema {
+  collectionName: 'components_v1_list_contents';
+  info: {
+    displayName: 'listContent';
+  };
+  attributes: {
+    listContent: Schema.Attribute.String;
+  };
+}
+
+export interface V1LogoList extends Struct.ComponentSchema {
+  collectionName: 'components_v1_logo_lists';
+  info: {
+    displayName: 'logoList';
+  };
+  attributes: {
+    listContent: Schema.Attribute.Component<'v1.content', true>;
+    listHeading: Schema.Attribute.Component<
+      'v1.main-heading-and-content',
+      false
+    >;
+  };
+}
+
+export interface V1LogoListComponent extends Struct.ComponentSchema {
+  collectionName: 'components_v1_logo_list_components';
+  info: {
+    displayName: 'logoListComponent';
+  };
+  attributes: {
+    logoList: Schema.Attribute.Component<'v1.logo-list', true>;
+  };
+}
+
 export interface V1MainHeadingAndContent extends Struct.ComponentSchema {
   collectionName: 'components_v1_main_heading_and_contents';
   info: {
@@ -149,10 +193,14 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'v1.advanced-section': V1AdvancedSection;
+      'v1.bulleted-list': V1BulletedList;
       'v1.code-block': V1CodeBlock;
       'v1.content': V1Content;
       'v1.image': V1Image;
       'v1.list': V1List;
+      'v1.list-content': V1ListContent;
+      'v1.logo-list': V1LogoList;
+      'v1.logo-list-component': V1LogoListComponent;
       'v1.main-heading-and-content': V1MainHeadingAndContent;
       'v1.paragraph': V1Paragraph;
     }

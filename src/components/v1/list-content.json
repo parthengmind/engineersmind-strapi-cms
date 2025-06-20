@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_v1_list_contents",
+  "info": {
+    "displayName": "listContent"
+  },
+  "options": {},
+  "attributes": {
+    "listContent": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

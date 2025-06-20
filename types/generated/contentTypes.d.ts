@@ -421,6 +421,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         'v1.main-heading-and-content',
         'v1.content',
         'v1.code-block',
+        'v1.bulleted-list',
+        'v1.logo-list-component',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
