@@ -181,6 +181,9 @@ export interface V1Paragraph extends Struct.ComponentSchema {
     content: Schema.Attribute.Component<'v1.content', false>;
     heading: Schema.Attribute.Component<'v1.main-heading-and-content', false>;
     image: Schema.Attribute.Component<'v1.image', false>;
+    layoutType: Schema.Attribute.Enumeration<
+      ['none', 'contentLeftImageRight', 'contentRightImageLeft']
+    >;
   };
 }
 

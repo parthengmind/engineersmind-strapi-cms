@@ -19,6 +19,14 @@
       "type": "component",
       "component": "v1.image",
       "repeatable": false
+    },
+    "layoutType": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "contentLeftImageRight",
+        "contentRightImageLeft"
+      ]
     }
   },
   "config": {}
