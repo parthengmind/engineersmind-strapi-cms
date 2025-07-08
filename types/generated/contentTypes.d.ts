@@ -413,6 +413,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    autherName: Schema.Attribute.String;
     blogContent: Schema.Attribute.DynamicZone<
       [
         'v1.paragraph',
@@ -428,9 +429,11 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    heroImage: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
+    minutesToRead: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text;
     thumbnail: Schema.Attribute.Media<'images' | 'files'> &

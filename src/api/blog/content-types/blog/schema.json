@@ -38,6 +38,20 @@
         "v1.bulleted-list",
         "v1.logo-list-component"
       ]
+    },
+    "autherName": {
+      "type": "string"
+    },
+    "minutesToRead": {
+      "type": "integer"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
