@@ -413,7 +413,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    autherName: Schema.Attribute.String;
+    authorsName: Schema.Attribute.RichText;
     blogContent: Schema.Attribute.DynamicZone<
       [
         'v1.paragraph',

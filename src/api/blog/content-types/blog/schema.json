@@ -39,9 +39,6 @@
         "v1.logo-list-component"
       ]
     },
-    "autherName": {
-      "type": "string"
-    },
     "minutesToRead": {
       "type": "integer"
     },
@@ -52,6 +49,9 @@
         "images",
         "files"
       ]
+    },
+    "authorsName": {
+      "type": "richtext"
     }
   }
 }
